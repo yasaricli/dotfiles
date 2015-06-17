@@ -1,0 +1,20 @@
+alias grep='grep --colour=auto'
+alias l='ls -G'
+alias ll='ls -al -G'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export PS1='\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+export EDITOR="vim"
+export LANG=en_US.UTF-8

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# COLOR commands
+redCommand=`tput setaf 1`
+greenCommand=`tput setaf 2`
+yellowCommand=`tput setaf 3`
+magentaCommand=`tput setaf 5`
+cyanCommand=`tput setaf 6`
+resetColorCommand=`tput sgr0`
+
+red() {
+  echo "${redCommand} $1 ${resetColorCommand}"
+}
+
+green() {
+  echo "${greenCommand} $1 ${resetColorCommand}"
+}
+
+yellow() {
+  echo "${yellowCommand} $1 ${resetColorCommand}"
+}
+
+magenta() {
+  echo "${magentaCommand} $1 ${resetColorCommand}"
+}
+
+cyan() {
+  echo "${cyanCommand} $1 ${resetColorCommand}"
+}
+
+# touch a template configuration file template
+touch_template() {
+  rm -rf $HOME/.$1
+  cat templates/$1 > $HOME/.$1
+}
+
+cyan '\n AUTHOR: Yasar ICLI'
+cyan 'REPO: https://github.com/yasaricli/dotfiles.git'
+
+yellow '\n Moving configuration files... \n'
+
+for f in templates/*; do
+  # basename command to extract the filename from the path
+  fname=`basename $f`
+
+  magenta "$fname -- ok."
+
+  # touch file
+  touch_template $fname
+done
+
+green '\n Check now been completed. \n'
