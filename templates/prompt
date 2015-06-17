@@ -1,0 +1,34 @@
+# git-aware-prompt 
+# https://github.com/jimeh/git-aware-prompt
+
+# COLORS
+txtcyn="$(tput setaf 6 2>/dev/null || echo '\e[0;36m')"  # Cyan
+txtgrn="$(tput setaf 2 2>/dev/null || echo '\e[0;32m')"  # Green
+txtylw="$(tput setaf 3 2>/dev/null || echo '\e[0;33m')"  # Yellow
+txtpur="$(tput setaf 5 2>/dev/null || echo '\e[0;35m')"  # Purple
+txtrst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"  # Text Reset
+
+# PROMT FUNCTIONS
+find_git_branch() {
+  # Based on: http://stackoverflow.com/a/13003854/170413
+  local branch
+  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    if [[ "$branch" == "HEAD" ]]; then
+      branch='detached*'
+    fi
+    git_branch="($branch)"
+  else
+    git_branch=""
+  fi
+}
+
+find_git_dirty() {
+  local status=$(git status --porcelain 2> /dev/null)
+  if [[ "$status" != "" ]]; then
+    git_dirty='*'
+  else
+    git_dirty=''
+  fi
+}
+
+PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"

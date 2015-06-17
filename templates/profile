@@ -1,3 +1,5 @@
+source "$HOME/.prompt"
+
 alias grep='grep --colour=auto'
 alias l='ls -G'
 alias ll='ls -al -G'
@@ -14,7 +16,8 @@ alias p="cd ~/Projects"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export PS1='\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 export EDITOR="vim"
 export LANG=en_US.UTF-8
+
+export PS1="\[$txtgrn\]\u\[$txtrst\] \[$txtpur\]\w \[$txtrst\]\[$txtylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
