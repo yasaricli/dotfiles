@@ -15,3 +15,6 @@ for f in templates/*; do
 done
 
 echo $END_TEXT
+
+# Source setup profile file.
+source $HOME/.profile
