@@ -26,5 +26,8 @@ export LANG=en_US.UTF-8
 
 export PS1="\[$txtgrn\]\u\[$txtrst\] \[$txtpur\]\w \[$txtrst\]\[$txtylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
 
-# Add mongoDB.app binaries to path https://github.com/gcollazo/mongodbapp
-PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb:$PATH"
+# Add mongoDB.app binaries to path
+PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin:$PATH"
+
+# Add Redis.app binaries to path
+PATH="/Applications/Redis.app/Contents/Resources/Vendor/redis/bin:$PATH"
