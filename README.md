@@ -1,20 +1,14 @@
-# dotfiles
-My configuration files
+# My .dotfiles
 
-## install
+It helps me to use the same settings every time. It can help in you.
 
-Run this:
+## Installing macOS cleanly
 
-```sh
-> git clone https://github.com/yasaricli/dotfiles.git
-> cd dotfiles
-```
+    git clone https://github.com/yasaricli/dotfiles.git
+    cd dotfiles
+    ./install
 
 Run the install command:
-
-```bash
-> ./install
-```
 
 ![thumbnail]
 
