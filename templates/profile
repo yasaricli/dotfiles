@@ -17,6 +17,7 @@ alias digany="dig -t ANY"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
+alias reload="adb shell input keyevent 82"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -31,3 +32,10 @@ PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin:$PATH"
 
 # Add Redis.app binaries to path
 PATH="/Applications/Redis.app/Contents/Resources/Vendor/redis/bin:$PATH"
+
+# Android sdk path
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
